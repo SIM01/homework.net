@@ -12,14 +12,14 @@ namespace stage6
             int numberoffigure = 9999;
             List<Figure> listfigures = new List<Figure>();
             Dictionary<Figure, string> dictionaryfigures = new Dictionary<Figure, string>();
-            Figure figureneedtofind = new Figure();
+            List<Figure> figureneedtofind = new List<Figure>();
             for (int i = 1; i <= numberoffigure; i++)
             {
                 var fig = new Figure() {SideCount = rnd.Next(3, 9999), SideLenght = rnd.Next(1, 9999)};
 
-                if (i == numberoffigure - 2)
+                if ((i % 2) == 0)
                 {
-                    figureneedtofind = fig;
+                    figureneedtofind.Add(new Figure() {SideCount = rnd.Next(3, 9999), SideLenght = rnd.Next(1, 9999)});
                 }
 
                 if (!listfigures.Contains(fig))
@@ -35,9 +35,19 @@ namespace stage6
             }
 
             var timer = Stopwatch.StartNew();
-            Figure foundfigure1 = listfigures.Find(item => item.Equals(figureneedtofind));
+            int countfind = 0;
+            foreach (var item in figureneedtofind)
+            {
+                if (listfigures.Contains(item))
+                {
+                    countfind++;
+                }
+            }
+            //Figure foundfigure1 = listfigures.Find(item => item.Equals(figureneedtofind));
+            
             timer.Stop();
-            Console.WriteLine($"Выполнение хитрого поиска по списку заняло {timer.Elapsed} мс");
+            Console.WriteLine($"Выполнение поиска по списку заняло {timer.Elapsed} мс");
+            /*
             timer = Stopwatch.StartNew();
             Figure foundfigure2 = new Figure();
             foreach (var item in listfigures)
@@ -51,12 +61,20 @@ namespace stage6
 
             timer.Stop();
             Console.WriteLine($"Выполнение поиска по списку заняло {timer.Elapsed} мс");
-            
+            */
             timer = Stopwatch.StartNew();
-            string foundfigure3 = dictionaryfigures[figureneedtofind];
+            countfind = 0;
+            foreach (var item in figureneedtofind)
+            {
+                if (dictionaryfigures.ContainsKey(item))
+                {
+                    countfind++;
+                }
+            }
+            //string foundfigure3 = dictionaryfigures[figureneedtofind];
             timer.Stop();
-            Console.WriteLine($"Выполнение поиска(хотя это не поиск, а обращение по ключу) по словарю заняло {timer.Elapsed} мс");
-            
+            Console.WriteLine($"Выполнение поиска по словарю заняло {timer.Elapsed} мс");
+            /*
             timer = Stopwatch.StartNew();
             string foundfigure4;
             dictionaryfigures.TryGetValue(figureneedtofind, out foundfigure4);
@@ -73,6 +91,7 @@ namespace stage6
             }
             timer.Stop();
             Console.WriteLine($"Выполнение поиска(foreach) по словарю заняло {timer.Elapsed} мс");
+            */
         }
     }
 }
