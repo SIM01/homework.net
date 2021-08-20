@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stage6", "stage6\stage6.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankKlients", "BankKlients\BankKlients.csproj", "{40C6F065-6D69-4641-9B1F-8C93BC86183F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stage7", "stage7\stage7.csproj", "{CC7EA175-6976-4B90-B42F-CDFECAFA845E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{40C6F065-6D69-4641-9B1F-8C93BC86183F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40C6F065-6D69-4641-9B1F-8C93BC86183F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40C6F065-6D69-4641-9B1F-8C93BC86183F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC7EA175-6976-4B90-B42F-CDFECAFA845E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC7EA175-6976-4B90-B42F-CDFECAFA845E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC7EA175-6976-4B90-B42F-CDFECAFA845E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC7EA175-6976-4B90-B42F-CDFECAFA845E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
