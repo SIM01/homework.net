@@ -20,8 +20,6 @@ namespace stage10
 
         public void Start(int maxConcurrent)
         {
-            //Stop();
-            
             int countRunTask = 0;
             List<Action> taskstmp = new List<Action>(tasks);
             
@@ -36,7 +34,6 @@ namespace stage10
                     taskstmp.Remove(task);
                 }
             }
-
             tasks = taskstmp;
         }
 
